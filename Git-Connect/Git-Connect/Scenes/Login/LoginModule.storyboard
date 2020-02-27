@@ -27,15 +27,19 @@
         <!--LoginVC-->
         <scene sceneID="4we-5M-GTq">
             <objects>
-                <viewController storyboardIdentifier="sid_GCLoginVC" id="vWq-i6-snN" customClass="GCLoginVC" customModule="Git_Connect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sid_GCLoginVC" interfaceStyle="dark" id="vWq-i6-snN" customClass="GCLoginVC" customModule="Git_Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sJ0-Ps-wst">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.098039215690000001" green="0.90196078430000004" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="oIg-Kx-3wJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="KQP-ca-uN4"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="blackStatusBar" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="hideNavigationBar" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhr-CI-N8A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

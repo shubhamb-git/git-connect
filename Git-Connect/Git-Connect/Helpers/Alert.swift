@@ -8,13 +8,34 @@
 
 import UIKit
 
-extension UIViewController {
-    
-    func present(withTitle title: String, description: String? = nil) {
-        let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
+extension UIAlertController {
+
+   class func present(withTitle title: String, description: String? = nil) {
+        let alertController = UIAlertController(title: title, message: description, preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(dismissAction)
-        present(alert, animated: true, completion: nil)
+        alertController.addAction(dismissAction)
+        UIApplication.shared.windows.last?.rootViewController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    class func internetError(retry: (() -> Void)? = nil) {
+        DispatchQueue.main.async {
+            // Hide Porgress
+            let alertController = UIAlertController.init(title: "Connection Failed!", message: GCConstants.inernetConnectionErrorMessage, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Retry", style: .default) {
+                UIAlertAction in
+                //Show progress
+                retry?()
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+                UIAlertAction in
+                NSLog("Cancel Pressed")
+            }
+            alertController.addAction(cancelAction)
+            if retry != nil {
+                alertController.addAction(okAction)
+            }
+            UIApplication.shared.windows.last?.rootViewController?.present(alertController, animated: true, completion: nil)
+        }
     }
 }
 
