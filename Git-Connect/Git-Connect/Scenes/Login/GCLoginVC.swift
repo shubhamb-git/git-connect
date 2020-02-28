@@ -10,10 +10,18 @@ import UIKit
 
 class GCLoginVC: GCBaseViewController {
 
+    lazy var loginViewModel = LoginViewModel.init(with: self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        loader(show: true)
+        loginViewModel.login(withUserName: "shubhamb-git")
+    }
+
         
     deinit {
         print("GCLoginVC Deinit")
