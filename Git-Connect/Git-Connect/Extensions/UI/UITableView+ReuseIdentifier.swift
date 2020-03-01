@@ -14,3 +14,9 @@ extension UITableViewCell {
         return String(describing: self)
     }
 }
+
+extension UITableViewCell: NibLoadable {
+    static func register(withTableView tableView: UITableView) {
+        tableView.register(defaultNib, forCellReuseIdentifier: defaultReuseIdentifier)
+    }
+}

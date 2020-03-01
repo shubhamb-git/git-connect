@@ -14,19 +14,24 @@ extension GCLoginVC: LoginViewModelDelegate {
         Helper.dispatchAsyncMain { [unowned self] in
             self.loader(show: false)
             guard let userModel = self.loginViewModel.userModel else {
-                UIAlertController.present(withTitle: "Unknown Error!!!")
+                UIAlertController.present(withTitle: GCConstants.unknownErrorMessage)
                 return
             }
             // storing current user details
             UserDefaultsManager.loggedInUserDetails = userModel
-            UIAlertController.present(withTitle: "\(userModel.name ?? "User") Logged in")
+            
+            let window = UIApplication.shared.delegate?.window!
+            let vc = GCTabBarController.instance()
+            UIView.transition(from: window!.rootViewController!.view, to: vc.view, duration: 0.5, options: UIView.AnimationOptions.curveEaseIn, completion: { (_) in
+                window?.rootViewController = vc
+            })
         }
     }
     
     func loginFailed(with error: String?) {
         Helper.dispatchAsyncMain { [unowned self] in
             self.loader(show: false)
-            UIAlertController.present(withTitle: "Unknown Error!!!", description: error)
+            UIAlertController.present(withTitle: error)
         }
     }
 }

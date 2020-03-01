@@ -10,7 +10,7 @@ import UIKit
 
 extension UIAlertController {
 
-   class func present(withTitle title: String, description: String? = nil) {
+   class func present(withTitle title: String? = "Alert!!", description: String? = nil) {
         let alertController = UIAlertController(title: title, message: description, preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertController.addAction(dismissAction)

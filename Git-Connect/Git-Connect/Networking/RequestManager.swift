@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 protocol NetworkProtocol {
-     func dataRequest<T: Codable>(with inputRequest: RouterProtocol, completionHandler: @escaping (ServiceResponse<T>) -> Void)
+     func dataRequest<T: Decodable>(with inputRequest: RouterProtocol, completionHandler: @escaping (ServiceResponse<T>) -> Void)
     func cancelAllRequests()
 }
 
@@ -34,7 +34,7 @@ final class RequestManager {
 
 extension RequestManager: NetworkProtocol {
  
-    func dataRequest<T: Codable>(with inputRequest: RouterProtocol, completionHandler: @escaping (ServiceResponse<T>) -> Void) {
+    func dataRequest<T: Decodable>(with inputRequest: RouterProtocol, completionHandler: @escaping (ServiceResponse<T>) -> Void) {
         
         print("ROUTER BASE", GCConstants.baseUrl)
         print("ROUTER PARAMETERS", inputRequest.parameters ?? [:])

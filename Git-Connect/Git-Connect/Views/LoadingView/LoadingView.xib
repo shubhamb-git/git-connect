@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LoadingView" customModule="Deven_app" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LoadingView" customModule="Git_Connect" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -21,12 +21,12 @@
                     <subviews>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="2UO-tS-WfD">
                             <rect key="frame" x="31.5" y="15" width="20" height="20"/>
-                            <color key="color" red="0.4051293433" green="0.27865970130000001" blue="0.80352509019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="color" red="0.48393285270000003" green="0.78592830899999999" blue="0.6705766916" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </activityIndicatorView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOADING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXN-b5-Ltw">
                             <rect key="frame" x="14.5" y="48.5" width="54.5" height="14.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                            <color key="textColor" red="0.4051293433" green="0.27865970130000001" blue="0.80352509019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.48393285270000003" green="0.78592830899999999" blue="0.6705766916" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>

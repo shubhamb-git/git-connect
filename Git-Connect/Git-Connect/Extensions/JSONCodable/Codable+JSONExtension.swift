@@ -10,7 +10,11 @@ import Foundation
 
 public extension Decodable {
     
-    static var decoder: JSONDecoder { return JSONDecoder() }
+    static var decoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }
     
     // Create instances of our type from JSON Data.
     init?(jsonData: Data?) {

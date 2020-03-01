@@ -10,6 +10,8 @@ import UIKit
 
 class GCLoginVC: GCBaseViewController {
 
+    @IBOutlet weak var textFieldUserName: UITextField?
+
     lazy var loginViewModel = LoginViewModel.init(with: self)
     
     override func viewDidLoad() {

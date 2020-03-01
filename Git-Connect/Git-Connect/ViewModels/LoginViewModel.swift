@@ -23,9 +23,9 @@ class LoginViewModel {
     }
     
     func login(withUserName userName: String) {
-        let rounter = WSRouter.login(userName)
+        let router = WSRouter.login(userName)
         
-        RequestManager.shared.dataRequest(with: rounter) { [weak self] (response: ServiceResponse<UserModel>) in
+        RequestManager.shared.dataRequest(with: router) { [weak self] (response: ServiceResponse<UserModel>) in
             guard let strongSelf = self else { return }
             switch response {
             case .success(let result):
