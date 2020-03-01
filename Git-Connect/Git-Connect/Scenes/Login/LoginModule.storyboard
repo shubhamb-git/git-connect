@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NWL-h3-dlo">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="IaU-1l-q2L">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="NWL-h3-dlo" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fe3-Sp-r4w">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="z4k-Fc-Abr" kind="relationship" relationship="rootViewController" id="e5R-mj-V5d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAq-qu-E6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-626" y="-145"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="TuP-RL-fmt">
+            <objects>
+                <viewController storyboardIdentifier="sid_login" id="z4k-Fc-Abr" customClass="GCLoginVC" customModule="Git_Connect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sPf-Uv-eKW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="3bd-2N-Pwp">
+                                <rect key="frame" x="30" y="126" width="125" height="104"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back," lineBreakMode="tailTruncation" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="YCb-H2-D1h">
+                                <rect key="frame" x="30" y="240" width="285" height="55.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="285" id="Gak-pa-WBT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="42"/>
+                                <color key="textColor" red="0.035287108269999999" green="0.035298604519999999" blue="0.035284597430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to continue" lineBreakMode="tailTruncation" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NQz-nN-jIY">
+                                <rect key="frame" x="30" y="295.5" width="184" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="184" id="n9v-AM-S1y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="21"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="3c0-cT-SXl">
+                                <rect key="frame" x="30" y="373.5" width="354" height="187.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qbl-z0-1Ji">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="83.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub Username" lineBreakMode="tailTruncation" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="2yw-CZ-rC9">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="27" id="uSi-0A-Iof"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="shubhamb-git" placeholder="Enter here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gN6-Cr-t9x">
+                                                <rect key="frame" x="0.0" y="27" width="354" height="56"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="app-z3-HgU"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="z4k-Fc-Abr" id="muF-U2-yS3"/>
+                                                </connections>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bc-kB-hqQ">
+                                                <rect key="frame" x="0.0" y="83" width="354" height="0.5"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="0.5" id="o1b-6V-zH2"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HME-5B-114" customClass="CustomButton" customModule="Git_Connect" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="133.5" width="354" height="54"/>
+                                        <color key="backgroundColor" red="0.48393285274505615" green="0.78592830896377563" blue="0.67057669162750244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="5vA-MH-Mhy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="20"/>
+                                        <state key="normal" title="Login"/>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.48393285270000003" green="0.78592830899999999" blue="0.6705766916" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                                <color key="value" red="0.48393285270000003" green="0.78592830899999999" blue="0.6705766916" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="showBorderOnHighlight" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="z4k-Fc-Abr" eventType="touchUpInside" id="4jV-zQ-5h3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3c0-cT-SXl" firstAttribute="leading" secondItem="YCb-H2-D1h" secondAttribute="trailing" constant="10" id="4s1-Pl-4lO"/>
+                            <constraint firstItem="3c0-cT-SXl" firstAttribute="leading" secondItem="YCb-H2-D1h" secondAttribute="trailing" constant="69" id="5Tb-zk-DvP">
+                                <variation key="heightClass=compact-widthClass=regular" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="3c0-cT-SXl" firstAttribute="centerY" secondItem="VeR-dT-3qY" secondAttribute="centerY" id="7AL-kf-kRa"/>
+                            <constraint firstItem="3c0-cT-SXl" firstAttribute="top" secondItem="NQz-nN-jIY" secondAttribute="bottom" constant="50" id="7O8-vs-JTv"/>
+                            <constraint firstItem="YCb-H2-D1h" firstAttribute="top" secondItem="3bd-2N-Pwp" secondAttribute="bottom" constant="10" id="Aem-ZX-gcD"/>
+                            <constraint firstItem="3bd-2N-Pwp" firstAttribute="leading" secondItem="VeR-dT-3qY" secondAttribute="leading" constant="10" id="JfY-O7-Pev">
+                                <variation key="heightClass=compact-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="3bd-2N-Pwp" firstAttribute="leading" secondItem="VeR-dT-3qY" secondAttribute="leading" constant="30" id="PrF-zJ-KTB"/>
+                            <constraint firstItem="3bd-2N-Pwp" firstAttribute="top" secondItem="VeR-dT-3qY" secondAttribute="top" constant="82" id="Qid-Ob-a5m"/>
+                            <constraint firstItem="3c0-cT-SXl" firstAttribute="centerY" secondItem="VeR-dT-3qY" secondAttribute="centerY" id="SX0-7h-FsF"/>
+                            <constraint firstItem="VeR-dT-3qY" firstAttribute="trailing" secondItem="3c0-cT-SXl" secondAttribute="trailing" constant="30" id="Y7G-sF-nNg">
+                                <variation key="heightClass=compact-widthClass=regular" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="YCb-H2-D1h" firstAttribute="leading" secondItem="3bd-2N-Pwp" secondAttribute="leading" id="e8V-Dl-wFS"/>
+                            <constraint firstItem="NQz-nN-jIY" firstAttribute="leading" secondItem="YCb-H2-D1h" secondAttribute="leading" id="eHb-np-21L"/>
+                            <constraint firstItem="NQz-nN-jIY" firstAttribute="top" secondItem="YCb-H2-D1h" secondAttribute="bottom" id="khg-EL-E5k"/>
+                            <constraint firstItem="3bd-2N-Pwp" firstAttribute="leading" secondItem="VeR-dT-3qY" secondAttribute="leading" constant="40" id="nq1-lQ-xTL"/>
+                            <constraint firstItem="VeR-dT-3qY" firstAttribute="trailing" secondItem="3c0-cT-SXl" secondAttribute="trailing" constant="30" id="q5c-kp-keQ"/>
+                            <constraint firstItem="3c0-cT-SXl" firstAttribute="leading" secondItem="VeR-dT-3qY" secondAttribute="leading" constant="30" id="vxg-Eb-WxM"/>
+                            <constraint firstAttribute="trailing" secondItem="3c0-cT-SXl" secondAttribute="trailing" constant="10" id="yDb-Gt-XiP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VeR-dT-3qY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="q5c-kp-keQ"/>
+                                <exclude reference="Y7G-sF-nNg"/>
+                                <exclude reference="JfY-O7-Pev"/>
+                                <exclude reference="nq1-lQ-xTL"/>
+                                <exclude reference="PrF-zJ-KTB"/>
+                                <exclude reference="SX0-7h-FsF"/>
+                                <exclude reference="yDb-Gt-XiP"/>
+                                <exclude reference="4s1-Pl-4lO"/>
+                                <exclude reference="7AL-kf-kRa"/>
+                                <exclude reference="5Tb-zk-DvP"/>
+                                <exclude reference="vxg-Eb-WxM"/>
+                                <exclude reference="7O8-vs-JTv"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="JfY-O7-Pev"/>
+                                <include reference="SX0-7h-FsF"/>
+                                <include reference="yDb-Gt-XiP"/>
+                                <include reference="4s1-Pl-4lO"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="Y7G-sF-nNg"/>
+                                <include reference="nq1-lQ-xTL"/>
+                                <include reference="7AL-kf-kRa"/>
+                                <include reference="5Tb-zk-DvP"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="q5c-kp-keQ"/>
+                                <include reference="PrF-zJ-KTB"/>
+                                <include reference="vxg-Eb-WxM"/>
+                                <include reference="7O8-vs-JTv"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="rFb-xm-EKD"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="blackStatusBar" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="hideNavigationBar" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="textFieldUserName" destination="gN6-Cr-t9x" id="PhO-IO-CUd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vGc-wj-1Tg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167" y="-145"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="125" height="104"/>
+    </resources>
+</document>

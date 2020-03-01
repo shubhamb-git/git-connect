@@ -1,0 +1,6 @@
+module Pods_Git_Connect {
+  umbrella header "Pods-Git-Connect-umbrella.h"
+
+  export *
+  module * { export * }
+}
