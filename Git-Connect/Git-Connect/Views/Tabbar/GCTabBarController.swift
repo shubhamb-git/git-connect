@@ -10,7 +10,7 @@ import UIKit
 
 class GCTabBarController: UITabBarController, UITabBarControllerDelegate {
     
-    var arrayVc: [UIViewController]?
+    lazy var arrayVc = [UIViewController]()
     var itemController: TabBarItemController!
     
     static func instance() -> GCTabBarController {
@@ -20,9 +20,8 @@ class GCTabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        arrayVc = []
-        arrayVc?.append(setViewControllerForTabBarItem(itemType: .Search))
-        arrayVc?.append(setViewControllerForTabBarItem(itemType: .Profile(UserDefaultsManager.loggedInUserDetails!)))
+        arrayVc.append(setViewControllerForTabBarItem(itemType: .Search))
+        arrayVc.append(setViewControllerForTabBarItem(itemType: .Profile(UserDefaultsManager.loggedInUserDetails!)))
         viewControllers = arrayVc
         self.tabBar.tintColor = #colorLiteral(red: 0.3714280128, green: 0.7955666184, blue: 0.6633711457, alpha: 1)
     }
@@ -39,8 +38,7 @@ private extension GCTabBarController {
         let imageDisabled = UIImage(named: itemController.imageDisabled)
         let selectedImage = UIImage(named:itemController.imageEnbled)
         itemController.controller.tabBarItem = UITabBarItem(title: itemType.title, image: imageDisabled, selectedImage: selectedImage)
-        let viewController = UINavigationController(rootViewController: itemController.controller)
-        return viewController
+        return UINavigationController(rootViewController: itemController.controller)
     }
 }
 

@@ -24,6 +24,8 @@ class UserModel: Codable {
     let updatedAt: String?
     let score: Double?
     
+    private var favoriteUsers: [Int]?
+    
     var updatedDate: Date? {
         if let updatedAt = updatedAt {
             return DateFormatter.date(from: updatedAt, format: GCConstants.DateFormats.default)
@@ -38,4 +40,21 @@ class UserModel: Codable {
         return nil
     }
 
+    func addToFavorite(withUserId userId: Int?) {
+        guard let userId = userId else { return }
+        if favoriteUsers == nil {
+            favoriteUsers = [Int]()
+        }
+        favoriteUsers?.append(userId)
+    }
+
+    func removeFromFavorite(withUserId userId: Int?) {
+        guard let userId = userId, let index = favoriteUsers?.firstIndex(of: userId) else { return }
+        favoriteUsers?.remove(at: index)
+    }
+    
+    func isUserFavorite(withUserId userId: Int?) -> Bool {
+        guard let userId = userId else { return false }
+        return favoriteUsers?.contains(userId) ?? false
+    }
 }

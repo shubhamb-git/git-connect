@@ -26,6 +26,15 @@ class ProfileVC: GCBaseViewController {
     @IBOutlet weak var reposTableView: UITableView?
     @IBOutlet weak var headerPortraitHeightConstraint: NSLayoutConstraint!
     
+    lazy var favoriteButton: UIButton = {
+        let favoriteButton = UIButton.init(type: .custom)
+        favoriteButton.setImage(GCConstants.Images.favoriteNormal, for: .normal)
+        favoriteButton.setImage(GCConstants.Images.favoriteSelected, for: .selected)
+        favoriteButton.addTarget(self, action: #selector(ProfileVC.favoriteButtonTapped(_:)), for: .touchUpInside)
+        return favoriteButton
+    }()
+
+    
     var viewModel: ProfileViewModel?
     
     override func viewDidLoad() {
@@ -56,6 +65,11 @@ class ProfileVC: GCBaseViewController {
 extension ProfileVC {
     
     func setupUI() {
+        // show share icon only if viewing other user profile
+        if UserDefaultsManager.loggedInUserDetails?.id != self.viewModel?.userModel?.id {
+            self.navigationBarSetup()
+        } 
+
         headerPortraitHeightConstraint.constant = C.headerPortraitHeight
         reposTableView?.register(RepoRowCell.defaultNib, forCellReuseIdentifier: RepoRowCell.defaultReuseIdentifier)
         
@@ -69,27 +83,32 @@ extension ProfileVC {
         viewModel?.repoViewModel.delegate = self
     }
     
+    func navigationBarSetup() {
+        favoriteButton.isSelected = UserDefaultsManager.loggedInUserDetails?.isUserFavorite(withUserId: self.viewModel?.userModel?.id) ?? false
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: favoriteButton)
+    }
+
     func updateUI() {
         if let user = viewModel?.userModel {
-            self.lblUserName.text   = user.name
-            self.lblBio.text        = user.bio?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            self.lblUserName.text = user.name
+            self.lblBio.text = user.bio?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             self.lblLocation.text   = user.location
             self.lblFollowersCount.text = "\(user.followers ?? 0)"
             self.lblFollowingCount.text = "\(user.following ?? 0)"
         }
     }
     
-    @objc func shareButtonTapped(_ sender: UIButton) {
-        guard let user = viewModel?.userModel, let userId = user.login else {
+    @objc func favoriteButtonTapped(_ sender: UIButton) {
+        guard let loggedUser = UserDefaultsManager.loggedInUserDetails else {
             return
         }
-        let textToShare = "I found \(user.name ?? userId) awesome contributor on GitHub, Check this out."
-        if let urlString = user.htmlUrl, let profileUrl = URL(string: urlString) {
-            let objectsToShare: [Any] = [textToShare, profileUrl]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            activityVC.popoverPresentationController?.sourceView = sender
-            self.present(activityVC, animated: true, completion: nil)
+        if sender.isSelected {
+            loggedUser.removeFromFavorite(withUserId: self.viewModel?.userModel?.id)
+        } else {
+            loggedUser.addToFavorite(withUserId: self.viewModel?.userModel?.id)
         }
+        UserDefaultsManager.loggedInUserDetails = loggedUser
+        sender.isSelected = !sender.isSelected
     }
 }
 

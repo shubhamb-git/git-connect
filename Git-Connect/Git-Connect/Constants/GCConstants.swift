@@ -54,7 +54,8 @@ struct GCConstants {
     }
     
     struct Images {
-        static let shareIcon = UIImage(named: "share")
+        static let favoriteNormal = UIImage(named: "favoriteNormal")
+        static let favoriteSelected = UIImage(named: "favoriteSelected")
     }
     
     struct UserDefaultsKey {
